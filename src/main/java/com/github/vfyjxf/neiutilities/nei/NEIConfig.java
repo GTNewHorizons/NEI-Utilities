@@ -19,9 +19,9 @@ public class NEIConfig implements IConfigureNEI {
     @Override
     public void loadConfig() {
         {
-            API.registerUsageHandler(AdvancedItemPanel.INSTANCE);
-            API.registerRecipeHandler(AdvancedItemPanel.INSTANCE);
-            GuiContainerManager.addInputHandler(AdvancedItemPanel.INSTANCE);
+            RecipeHandler recipeHandler = new RecipeHandler();
+            API.registerUsageHandler(recipeHandler);
+            API.registerRecipeHandler(recipeHandler);
         }
         {
             GuiContainerManager.addInputHandler(new ItemInfoHelper());
